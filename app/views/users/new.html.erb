@@ -1,0 +1,14 @@
+<%= form_for(@user, url: new_user_path) do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %><br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %><br>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+    <%= f.label :bio %><br>
+    <%= f.text_area :bio %><br><br>
+    <%= f.select :type, [["Client", "client"], ["Worker", "worker"]] %><br><br>
+    <%= f.submit 'Sign Up' %>
+<% end %>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'application#home'
   
   resources :clients
+  resources :users
   get '/signup', to: 'users#new'
   get '/signin', to: 'users#signin'
 end
