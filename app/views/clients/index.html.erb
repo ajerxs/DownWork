@@ -1,6 +1,6 @@
 <h3>List of Clients</h3>
 
 <% @clients.each do |client| %>
-    <h4><%= client.first_name %> <%= client.last_name %></h4>
+    <h4><%= link_to client.full_name, client_path(client) %></h4>
     <p><%= client.bio %></p>
 <% end %>
