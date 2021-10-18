@@ -8,13 +8,28 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         # change this with once sessions can be set with type
         if @user.type == "client"
-            redirect_to client_path(@user)
+            redirect_to '/'
         else
-            redirect_to worker_path(@user)
+            redirect_to '/'
         end
     end
 
     def signin
+    end
+
+    def signedin
+        @user = User.find_by(email: params[:email])
+        if @user && @user.password == params[:password]
+            redirect_to '/signin'
+        else
+            session[:user_id] = @user.id
+            redirect_to root_path
+        end
+    end
+
+    def signout
+        session.delete(:user_id)
+        redirect_to root_path
     end
 
     private

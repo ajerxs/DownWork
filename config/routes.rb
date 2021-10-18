@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :users
   get '/signup', to: 'users#new'
   get '/signin', to: 'users#signin'
+  post '/signin', to: 'users#signedin'
+  get '/signout', to: 'users#signout'
 end

@@ -1,1 +1,8 @@
-<h3>Welcome to Down Work!</h3>
+<% if logged_in? && user_type == "Client" %>
+    <%= render "client" %>
+<% elsif logged_in? && user_type == "Worker" %>
+    <%= render "worker" %>
+<% else %>
+    <h3>Welcome to Down Work!</h3>
+    <%= render "signin" %>
+<% end %>
