@@ -5,7 +5,7 @@ class CreateJobs < ActiveRecord::Migration[6.1]
       t.text :description
       t.decimal :salary
       t.integer :needed_workers
-      t.belongs_to :client, null: false, foreign_key: true
+      t.integer :client_id
 
       t.timestamps
     end

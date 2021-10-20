@@ -1,0 +1,12 @@
+<%= form_for(@job, url: new_job_path) do |f| %>
+    <%= f.label "Title: " %>
+    <%= f.text_field :title %><br>
+    <%= f.label "Description: " %>
+    <%= f.text_field :description %><br>
+    <%= f.label "Salary: $" %>
+    <%= f.number_field :salary, step: 0.01 %><br>
+    <%= f.label "Number of Positions: " %>
+    <%= f.number_field :needed_workers, min: 0 %><br>
+    <%= f.hidden_field :client_id, value: @client.id %>
+    <%= f.submit %>
+<% end %>

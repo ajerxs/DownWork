@@ -28,10 +28,9 @@ ActiveRecord::Schema.define(version: 2021_10_12_224257) do
     t.text "description"
     t.decimal "salary"
     t.integer "needed_workers"
-    t.integer "client_id", null: false
+    t.integer "client_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["client_id"], name: "index_jobs_on_client_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,5 +46,4 @@ ActiveRecord::Schema.define(version: 2021_10_12_224257) do
 
   add_foreign_key "contracts", "jobs"
   add_foreign_key "contracts", "workers"
-  add_foreign_key "jobs", "clients"
 end
