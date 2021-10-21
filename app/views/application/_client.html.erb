@@ -1,3 +1,18 @@
 <h3>Welcome back, <%= current_user.first_name %>!</h3>
-<p>This will be a list of your posted jobs eventually.</p>
+<% if current_user.jobs != nil %>
+    <h4>Jobs Posted</h4>
+    <ol>
+    <% current_user.jobs.each do |job| %>
+        <li><%= job.title %></li>
+        <% if job.contracts != nil %>
+            <p>Active Contracts:</p>
+            <% job.contracts.each do contract %>
+                <p>Employee: <%= contract.worker %></p>
+            <% end %>
+        <% end %>
+    <% end %>
+    </ol>
+<% else %>
+    <p>To get started, post a job!<p>
+<% end %>
 <p>And this will be a list of your contracted jobs.</p>
