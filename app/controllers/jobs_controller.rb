@@ -26,13 +26,10 @@ class JobsController < ApplicationController
         end
     end
 
-    def edit
-    end
-
-    def update
-    end
-
     def destroy
+        @job = Job.find_by(id: params[:id])
+        @job.destroy
+        redirect_to jobs_path
     end
 
     private

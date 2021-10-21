@@ -3,3 +3,6 @@
 <p><strong>Pay:</strong> $<%= @job.salary %>0</p>
 <p><strong>Total positions for job:</strong> <%= @job.needed_workers %></p>
 <p><%= @job.description %></p>
+<% if @job.client == current_user %>
+    <%= link_to 'Delete Job?', @job, method: 'delete' %>
+<% end %>
