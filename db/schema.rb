@@ -15,12 +15,10 @@ ActiveRecord::Schema.define(version: 2021_10_12_224257) do
   create_table "contracts", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.integer "job_id", null: false
-    t.integer "worker_id", null: false
+    t.integer "job_id"
+    t.integer "worker_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["job_id"], name: "index_contracts_on_job_id"
-    t.index ["worker_id"], name: "index_contracts_on_worker_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -44,6 +42,4 @@ ActiveRecord::Schema.define(version: 2021_10_12_224257) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "contracts", "jobs"
-  add_foreign_key "contracts", "workers"
 end

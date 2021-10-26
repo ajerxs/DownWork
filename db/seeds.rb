@@ -18,3 +18,5 @@ worker_3 = Worker.create(first_name: "Kaleb", last_name: "Cross", email: "revena
 job_1 = Job.create(title: "Steel Forged", description: "I need a strong man to help build the foundation of a new building. I need someone that is handy, and knows a thing or two about reinforcing structures.", salary: 45000.00, needed_workers: 15, client_id: 1)
 job_2 = Job.create(title: "Trained to Kill", description: "I am looking for an assassin. Someone that specializes in the art of terror, and is confident in their abilities to be as swift and silent as a ghost.", salary: 250000.00, needed_workers: 1, client_id: 2)
 job_3 = Job.create(title: "Precious Cargo", description: "I have a girl. Her value to the world is indescribable. I need someone I can trust to transport her safely across the country.", salary: 8000.00, needed_workers: 1, client_id: 3)
+
+contract_1 = Contract.create(start_date: "1/10/2021", end_date: "10/10/2021", job_id: 1, worker_id: 5)
