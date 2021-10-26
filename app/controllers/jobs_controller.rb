@@ -19,8 +19,11 @@ class JobsController < ApplicationController
 
     def create
         @job = Job.create(job_params)
+        if user_type == 'Client'
+            @user == current_user
+        end
         if @job
-            redirect_to jobs_path
+            redirect_to client_path(@user)
         else # render page with flash message
             redirect_to new_job_path
         end
