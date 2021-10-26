@@ -1,6 +1,13 @@
 <h3>Welcome back, <%= current_user.first_name %>!</h3>
-<p>Eventually this will be a list of your contracts.</p>
-<% if current_user.contracts  == nil %>
-    <p>USER CONTRACTS<p>
+<% if current_user.contracts.count != 0 %>
+    <ul>
+    <% current_user.contracts.each do |contract| %>
+        <li><strong><%= contract.job.client.full_name %></strong></li>
+        <p><strong>Pay: </strong><%= contract.job.salary %>0</p>
+        <p><strong>Hired Dates: </strong><%= contract.hired_dates %></p>
+    <% end %>
+    </ul>
+    <%= link_to "Would you like to look at more open job listings?", jobs_path %>
+<% else %>
+    <%= link_to "To get started, look through the open jobs!", jobs_path %>
 <% end %>
-<p>Would you like to look at more open job listings?</p>
