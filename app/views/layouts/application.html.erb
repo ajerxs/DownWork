@@ -18,6 +18,8 @@
       <%= link_to('Sign In', controller: 'users', action: 'signin', class: "nav-tag") %>
       <%= link_to('Sign Up', controller: 'users', action: 'new', class: "nav-tag") %>
     <% else %>
+      <%= link_to('Home', controller: 'application', action: 'home', class: "nav-tag") %>
+      <%= link_to('All Jobs', controller: 'jobs', action: 'index', class: "nav-tag") %>
       <%= link_to('Sign Out', controller: 'users', action: 'signout', class: "nav-tag") %>
     <% end %>
   </nav>
