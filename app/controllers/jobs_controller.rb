@@ -19,11 +19,8 @@ class JobsController < ApplicationController
 
     def create
         @job = Job.create(job_params)
-        if user_type == 'Client'
-            @user == current_user
-        end
-        if @job
-            redirect_to client_path(@user)
+        if @job && helpers.user_type == 'Client'
+            redirect_to root_path
         else # render page with flash message
             redirect_to new_job_path
         end
@@ -32,7 +29,7 @@ class JobsController < ApplicationController
     def destroy
         @job = Job.find_by(id: params[:id])
         @job.destroy
-        redirect_to jobs_path
+        redirect_to root_path
     end
 
     private
