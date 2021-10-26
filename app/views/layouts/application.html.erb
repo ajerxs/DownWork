@@ -14,9 +14,12 @@
     <h1>DownWork</h1>
   <div>
   <nav>
-    <%= link_to('Sign In', controller: 'users', action: 'signin', class: "nav-tag") %>
-    <%= link_to('Sign Up', controller: 'users', action: 'new', class: "nav-tag") %>
-    <%= link_to('Sign Out', controller: 'users', action: 'signout', class: "nav-tag") %>
+    <% if current_user == nil %>
+      <%= link_to('Sign In', controller: 'users', action: 'signin', class: "nav-tag") %>
+      <%= link_to('Sign Up', controller: 'users', action: 'new', class: "nav-tag") %>
+    <% else %>
+      <%= link_to('Sign Out', controller: 'users', action: 'signout', class: "nav-tag") %>
+    <% end %>
   </nav>
   <br>
   <body>
