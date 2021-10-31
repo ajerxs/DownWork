@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   
   get '/signup', to: 'users#new'
+  post '/users/new', to: 'users#create'
   get '/signin', to: 'users#signin'
   post '/signin', to: 'users#signedin'
   get '/signout', to: 'users#signout'

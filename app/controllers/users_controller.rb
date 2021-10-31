@@ -6,12 +6,8 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        # change this with once sessions can be set with type, maybe insert a flash message if failed to create
-        if @user.type == "client"
-            redirect_to '/'
-        else
-            redirect_to '/'
-        end
+        session[:user_id] = @user.id
+        redirect_to '/'
     end
 
     def edit
