@@ -1,0 +1,11 @@
+<h2>Form a contract for: <%= @job.title %></h2>
+<h3>To take this job, tell us the timeframe in which you'll complete your assignment.</h3>
+<%= form_for(@contract, url: new_job_contract_path(@job.id)) do |f| %>
+    <%= f.label "Start Date: " %>
+    <%= f.date_select :start_date, :order => [:day, :month, :year] %><br>
+    <%= f.label "End Date: " %>
+    <%= f.date_select :end_date, :order => [:day, :month, :year] %><br>
+    <%= f.hidden_field :job_id, value: @job.id %>
+    <%= f.hidden_field :worker_id, value: @worker.id %>
+    <%= f.submit %>
+<% end %>

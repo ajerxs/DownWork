@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   post '/signin', to: 'users#signedin'
   get '/signout', to: 'users#signout'
   post '/jobs/new', to: 'jobs#create'
+  post '/jobs/:job_id/contracts/new', to: 'contracts#create'
 end
