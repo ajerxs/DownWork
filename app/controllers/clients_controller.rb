@@ -5,7 +5,7 @@ class ClientsController < ApplicationController
     end
 
     def show
-        @client = Client.find_by(params[:id])
+        @client = Client.find_by(id: params[:id])
     end
 
 end

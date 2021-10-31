@@ -6,3 +6,7 @@
 <% if @job.client == current_user %>
     <%= link_to 'Delete Job?', @job, method: 'delete' %>
 <% end %>
+
+<% if user_type == "Worker" %>
+    <%= link_to "Take this job?", new_job_contract_path(@job.id) %>
+<% end %>

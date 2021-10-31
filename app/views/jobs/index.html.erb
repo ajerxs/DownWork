@@ -1,6 +1,6 @@
 <h3>All Job Listings</h3>
 <% @jobs.each do |job| %>
-    <h4><%= job.title %></h4>
+    <h4><%= link_to job.title, job_path(job) %></h4>
     <p><%= job.description %></p>
     <p><strong>Pay:</strong> $<%= job.salary %>0</p>
     <p><strong>Total positions for job:</strong> <%= job.needed_workers %></p>

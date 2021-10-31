@@ -37,13 +37,13 @@ Contract (Join table for jobs and workers)
 
 
 REQUIREMENTS:
-    [] Ruby on Rails Framework
-    [] One has_many
-    [] One belongs_to 
-    [] Two has_many through
+    [x] Ruby on Rails Framework
+    [x] One has_many
+    [x] One belongs_to 
+    [x] Two has_many through
     [] Includes validations for models
     [] At least one class level scope method
-    [] Standard user authentication (signup, login, logout, passwords)
+    [x] Standard user authentication (signup, login, logout, passwords)
     [] Must also allow login from some other service (Facebook, Twitter, Foursquare, Github, etc)
     [] Nested resource with the appropriate RESTful URLs
     [] Forms should correctly display validation errors

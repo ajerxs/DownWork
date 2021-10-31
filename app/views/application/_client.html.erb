@@ -3,7 +3,7 @@
     <h4>Jobs Posted</h4>
     <ol>
     <% current_user.jobs.each do |job| %>
-        <li><%= job.title %></li>
+        <li><%= link_to job.title, job_path(job) %></li>
         <% if job.contracts.count != 0 %>
             <p>Active Contracts:</p>
             <ul>
