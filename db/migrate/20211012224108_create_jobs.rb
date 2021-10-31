@@ -3,7 +3,7 @@ class CreateJobs < ActiveRecord::Migration[6.1]
     create_table :jobs do |t|
       t.string :title
       t.text :description
-      t.decimal :salary
+      t.integer :salary
       t.integer :needed_workers
       t.integer :client_id
 

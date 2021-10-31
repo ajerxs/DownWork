@@ -4,7 +4,7 @@
     <%= f.label "Description: " %><br>
     <%= f.text_area :description %><br>
     <%= f.label "Salary: $" %>
-    <%= f.number_field :salary, step: 0.01 %><br>
+    <%= f.number_field :salary, step: 1 %><br>
     <%= f.label "Number of Positions: " %>
     <%= f.number_field :needed_workers, min: 0 %><br>
     <%= f.hidden_field :client_id, value: @client.id %>

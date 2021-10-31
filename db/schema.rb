@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_224257) do
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.decimal "salary"
+    t.integer "salary"
     t.integer "needed_workers"
     t.integer "client_id"
     t.datetime "created_at", precision: 6, null: false

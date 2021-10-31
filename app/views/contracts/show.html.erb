@@ -1,2 +1,5 @@
-<h2><%= @worker.full_name %></h2>
-<h2><%= @contract.job.client.full_name %></h2>
+<h2><%= @job.title %></h2>
+<h3>Client: <%= @job.client.full_name %></h3>
+<p><strong>Job Description: </strong><%= @job.description %></p>
+<p><strong>Salary: </strong>$<%= @job.salary %></p>
+<p><strong>Hired Dates: </strong><%= @contract.hired_dates %></p>

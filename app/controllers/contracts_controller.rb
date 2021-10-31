@@ -1,14 +1,15 @@
 class ContractsController < ApplicationController
 
-    def index
-        @contracts = helpers.current_user.contracts
-    end
+    # def index
+    #     @contracts = helpers.current_user.contracts
+    # end
 
     def new
         @worker = Worker.find_by(id: helpers.current_user.id)
         @job = Job.find_by(id: params[:job_id])
-        if @job.contracts.detect {|contract| contract.worker.full_name == @worker.full_name}
-            redirect_to worker_contract_path(@worker.id, @job.id)
+        if @job.contracts.detect {|contract| contract.worker.id == @worker.id}
+            @contract = @job.contracts.detect {|contract| contract.worker.id == @worker.id}
+            redirect_to worker_contract_path(@worker.id, @contract.id)
         else
             @contract = Contract.new
         end
@@ -26,6 +27,7 @@ class ContractsController < ApplicationController
     def show
         @worker = Worker.find_by(id: params[:worker_id])
         @contract = Contract.find_by(id: params[:id])
+        @job = @contract.job
     end
 
     private

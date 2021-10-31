@@ -1,9 +1,11 @@
 <h3>Welcome back, <%= current_user.first_name %>!</h3>
 <% if current_user.contracts.count != 0 %>
+    <h4>Here are your current contracts:</h4>
     <ul>
     <% current_user.contracts.each do |contract| %>
-        <li><strong><%= contract.job.client.full_name %></strong></li>
-        <p><strong>Pay: </strong><%= contract.job.salary %>0</p>
+        <li><strong><%= contract.job.title %></strong></li>
+        <p><strong>Client: </strong><%= contract.job.client.full_name %></p>
+        <p><strong>Pay: </strong>$<%= contract.job.salary %></p>
         <p><strong>Hired Dates: </strong><%= contract.hired_dates %></p>
     <% end %>
     </ul>
