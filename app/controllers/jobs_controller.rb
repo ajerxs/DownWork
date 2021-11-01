@@ -11,18 +11,17 @@ class JobsController < ApplicationController
     def new
         if helpers.user_type == "Client"
             @job = Job.new
-            @client = Client.find_by(email: helpers.current_user.email)
         else
             redirect_to '/'
         end
     end
 
     def create
-        @job = Job.create(job_params)
-        if @job && helpers.user_type == 'Client'
+        @job = Job.new(job_params)
+        if @job.save && helpers.user_type == 'Client'
             redirect_to root_path
-        else # render page with flash message
-            redirect_to new_job_path
+        else
+            render :new
         end
     end
 
@@ -39,7 +38,7 @@ class JobsController < ApplicationController
             :title,
             :description,
             :salary,
-            :needed_workers,
+            :positions,
             :client_id
         )
     end

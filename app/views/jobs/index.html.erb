@@ -3,6 +3,6 @@
     <h4><%= link_to job.title, job_path(job) %></h4>
     <p><%= job.description %></p>
     <p><strong>Pay:</strong> $<%= job.salary %></p>
-    <p><strong>Total positions for job:</strong> <%= job.needed_workers %></p>
+    <p><strong>Total positions for job:</strong> <%= job.positions %></p>
     <p><strong>Client:</strong> <%= job.client.full_name %></p>
 <% end %>

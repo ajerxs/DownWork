@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   
   get '/signup', to: 'users#new'
   post '/users/new', to: 'users#create'
-  get '/signin', to: 'users#signin'
-  post '/signin', to: 'users#signedin'
-  get '/signout', to: 'users#signout'
+  get '/signin', to: 'sessions#new'
+  post '/signin', to: 'sessions#create'
+  get '/signout', to: 'sessions#destroy'
   post '/jobs/new', to: 'jobs#create'
   post '/jobs/:job_id/contracts/new', to: 'contracts#create'
 end

@@ -16,11 +16,13 @@ class ContractsController < ApplicationController
     end
 
     def create
-        @contract = Contract.create(contract_params)
-        if @contract && helpers.user_type == 'Worker'
+        @job = Job.find_by(id: params[:job_id])
+        @worker = Worker.find_by(id: helpers.current_user.id)
+        @contract = Contract.new(contract_params)
+        if @contract.save && helpers.user_type == 'Worker'
             redirect_to root_path
         else
-            redirect_to new_job_contract_path(@job.id)
+            render :new
         end
     end
 

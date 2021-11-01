@@ -1,3 +1,18 @@
+<% if @job.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@job.errors.count, "error") %>
+      prohibited this user from being saved:
+    </h2>
+
+    <ul>
+    <% @job.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for(@job, url: new_job_path) do |f| %>
     <%= f.label "Title: " %>
     <%= f.text_field :title %><br>
@@ -6,7 +21,7 @@
     <%= f.label "Salary: $" %>
     <%= f.number_field :salary, step: 1 %><br>
     <%= f.label "Number of Positions: " %>
-    <%= f.number_field :needed_workers, min: 0 %><br>
-    <%= f.hidden_field :client_id, value: @client.id %>
+    <%= f.number_field :positions, min: 0 %><br>
+    <%= f.hidden_field :client_id, value: current_user.id %>
     <%= f.submit %>
 <% end %>

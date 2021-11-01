@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_224257) do
     t.string "title"
     t.text "description"
     t.integer "salary"
-    t.integer "needed_workers"
+    t.integer "positions"
     t.integer "client_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

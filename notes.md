@@ -41,11 +41,11 @@ REQUIREMENTS:
     [x] One has_many
     [x] One belongs_to 
     [x] Two has_many through
-    [] Includes validations for models
+    [x] Includes validations for models
     [] At least one class level scope method
     [x] Standard user authentication (signup, login, logout, passwords)
     [] Must also allow login from some other service (Facebook, Twitter, Foursquare, Github, etc)
-    [] Nested resource with the appropriate RESTful URLs
+    [x] Nested resource with the appropriate RESTful URLs
     [] Forms should correctly display validation errors
     [] DRY
     [] Do not use scaffolding to build your project
