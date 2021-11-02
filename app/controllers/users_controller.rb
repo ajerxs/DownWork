@@ -15,28 +15,17 @@ class UsersController < ApplicationController
     end
 
     def edit
+        @user = helpers.current_user
     end
 
     def update
+        @user = helpers.current_user
+        if @user.update(user_params)
+            redirect_to '/'
+        else
+            render :edit
+        end
     end
-
-    # def signin
-    # end
-
-    # def signedin
-    #     @user = User.find_by(email: params[:email])
-    #     if @user && @user.authenticate(params[:user][:password])
-    #         session[:user_id] = @user.id
-    #         redirect_to root_path
-    #     else
-    #         redirect_to '/signin'
-    #     end
-    # end
-
-    # def signout
-    #     session.delete(:user_id)
-    #     redirect_to root_path
-    # end
 
     private
 

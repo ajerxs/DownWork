@@ -1,0 +1,29 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this user from being saved:
+    </h2>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for :user, url: '/profile/edit', action: :update, method: :post do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %><br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %><br>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+    <%= f.label :bio %><br>
+    <%= f.text_area :bio %><br><br>
+    <%= f.hidden_field :type, value: current_user.type %>
+    <%= f.submit 'Edit Profile' %>
+<% end %>
