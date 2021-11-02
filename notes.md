@@ -46,7 +46,7 @@ REQUIREMENTS:
     [x] Standard user authentication (signup, login, logout, passwords)
     [] Must also allow login from some other service (Facebook, Twitter, Foursquare, Github, etc)
     [x] Nested resource with the appropriate RESTful URLs
-    [] Forms should correctly display validation errors
+    [x] Forms should correctly display validation errors
     [] DRY
     [] Do not use scaffolding to build your project
 

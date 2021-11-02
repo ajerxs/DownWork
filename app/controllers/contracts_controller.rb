@@ -1,9 +1,5 @@
 class ContractsController < ApplicationController
 
-    # def index
-    #     @contracts = helpers.current_user.contracts
-    # end
-
     def new
         @worker = Worker.find_by(id: helpers.current_user.id)
         @job = Job.find_by(id: params[:job_id])
