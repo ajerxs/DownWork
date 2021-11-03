@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   post '/profile/edit', to: 'users#update'
   post '/jobs/new', to: 'jobs#create'
   post '/jobs/:job_id/contracts/new', to: 'contracts#create'
+  get '/high_paying', to: 'jobs#high_paying'
 end

@@ -1,0 +1,9 @@
+<h2>These are the Higher End jobs.</h2>
+<% @jobs.each do |job| %>
+    <h4><%= link_to job.title, job_path(job) %></h4>
+    <p><%= job.description %></p>
+    <p><strong>Pay:</strong> $<%= job.salary %></p>
+    <p><strong>Total positions for job:</strong> <%= job.positions %></p>
+    <p><strong>Client:</strong> <%= job.client.full_name %></p>
+<% end %>
+<p>We consider any job that pays over $100,000 to be "high pay".</p>

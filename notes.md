@@ -44,10 +44,10 @@ REQUIREMENTS:
     [x] Includes validations for models
     [] At least one class level scope method
     [x] Standard user authentication (signup, login, logout, passwords)
-    [] Must also allow login from some other service (Facebook, Twitter, Foursquare, Github, etc)
+    [x] Must also allow login from some other service (Facebook, Twitter, Foursquare, Github, etc)
     [x] Nested resource with the appropriate RESTful URLs
     [x] Forms should correctly display validation errors
-    [] DRY
+    [x] DRY
     [x] Do not use scaffolding to build your project
 
 PROCESS FOR BLOG

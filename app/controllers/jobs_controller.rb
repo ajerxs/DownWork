@@ -8,6 +8,10 @@ class JobsController < ApplicationController
         @job = Job.find_by(id: params[:id])
     end
 
+    def high_paying
+        @jobs = Job.high_paying
+    end
+
     def new
         if helpers.user_type == "Client"
             @job = Job.new
