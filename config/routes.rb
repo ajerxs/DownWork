@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/users/new', to: 'users#create'
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
+  match '/auth/facebook/callback', to: 'sessions#authcreate', via: [:get, :post]
   get '/signout', to: 'sessions#destroy'
   get '/profile/edit', to: 'users#edit'
   post '/profile/edit', to: 'users#update'

@@ -4,3 +4,6 @@
     Password: <%= password_field_tag :password %><br>
     <%= submit_tag "Sign In" %>
 <% end %>
+<br><br>
+<%= link_to('Log in with Facebook!', '/auth/facebook', method: :post) %>
+<p>(Please note that if you are using an account through Facebook, you will automatically be assigned 'Worker' status in the database.)

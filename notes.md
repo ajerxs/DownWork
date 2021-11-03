@@ -48,7 +48,7 @@ REQUIREMENTS:
     [x] Nested resource with the appropriate RESTful URLs
     [x] Forms should correctly display validation errors
     [] DRY
-    [] Do not use scaffolding to build your project
+    [x] Do not use scaffolding to build your project
 
 PROCESS FOR BLOG
     1) Started with notes page to outline relationships between models and attributes of models.
