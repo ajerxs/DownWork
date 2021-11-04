@@ -21,6 +21,11 @@
       <%= link_to('Home', controller: 'application', action: 'home', class: "nav-tag") %>
       <%= link_to('Edit Profile', controller: 'users', action: 'edit', class: "nav-tag") %>
       <%= link_to('All Jobs', controller: 'jobs', action: 'index', class: "nav-tag") %>
+      <% if user_type == "Client" %>
+        <%= link_to('Find Talent', controller: 'workers', action: 'index', class: "nav-tag") %>
+      <% else %>
+      <%= link_to('Find a Client', controller: 'clients', action: 'index', class: "nav-tag") %>
+      <% end %>
       <%= link_to('Sign Out', controller: 'sessions', action: 'destroy', class: "nav-tag") %>
     <% end %>
   </nav>
