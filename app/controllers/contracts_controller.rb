@@ -1,6 +1,20 @@
 class ContractsController < ApplicationController
     before_action :require_login
 
+    def index
+        if params[:worker_id]
+            @contracts = Worker.find_by(id: params[:worker_id]).contracts
+        else
+            @contracts = Job.find_by(id: params[:job_id]).contracts
+        end
+    end
+
+    def show
+        @worker = Worker.find_by(id: params[:worker_id])
+        @contract = Contract.find_by(id: params[:id])
+        @job = @contract.job
+    end
+
     def new
         @worker = Worker.find_by(id: helpers.current_user.id)
         @job = Job.find_by(id: params[:job_id])
@@ -21,12 +35,6 @@ class ContractsController < ApplicationController
         else
             render :new
         end
-    end
-
-    def show
-        @worker = Worker.find_by(id: params[:worker_id])
-        @contract = Contract.find_by(id: params[:id])
-        @job = @contract.job
     end
 
     private

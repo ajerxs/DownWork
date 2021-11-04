@@ -1,1 +1,10 @@
-<h1><%= @contracts.first.worker.full_name %></h1>
+<h2>All Contracts:</h2>
+<% @contracts.each do |contract| %>
+    <ol>
+        <li><strong>Job Name: </strong><%= contract.job.title %></li>
+        <ul>
+            <li><%= contract.job.description %></li>
+            <li>$<%= contract.job.salary %></li>
+        </ul>
+    </ol>
+<% end %>
