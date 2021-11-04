@@ -25,6 +25,12 @@
     <% end %>
   </nav>
   <br>
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+  <br>
   <body>
     <%= yield %>
   </body>

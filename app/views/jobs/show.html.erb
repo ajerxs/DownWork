@@ -1,5 +1,5 @@
 <h2><%= @job.title %></h2>
-<p><strong>Client: <%= @job.client.full_name %></strong></p>
+<p><strong>Client: <%= link_to @job.client.full_name, client_path(@job.client) %></strong></p>
 <p><strong>Pay:</strong> $<%= @job.salary %></p>
 <p><strong>Total positions for job:</strong> <%= @job.positions %></p>
 <p><%= @job.description %></p>

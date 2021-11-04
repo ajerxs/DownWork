@@ -4,5 +4,5 @@
     <p><%= job.description %></p>
     <p><strong>Pay:</strong> $<%= job.salary %></p>
     <p><strong>Total positions for job:</strong> <%= job.positions %></p>
-    <p><strong>Client:</strong> <%= job.client.full_name %></p>
+    <p><strong>Client:</strong> <%= link_to job.client.full_name, client_path(job.client) %></p>
 <% end %>

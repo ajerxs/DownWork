@@ -1,4 +1,5 @@
 class ContractsController < ApplicationController
+    before_action :require_login
 
     def new
         @worker = Worker.find_by(id: helpers.current_user.id)

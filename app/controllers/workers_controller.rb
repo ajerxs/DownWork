@@ -1,4 +1,5 @@
 class WorkersController < ApplicationController
+    before_action :require_login
 
     def index
         @workers = Worker.all
