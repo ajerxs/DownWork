@@ -33,7 +33,9 @@ class JobsController < ApplicationController
     def destroy
         @job = Job.find_by(id: params[:id])
         @contract = Contract.find_by(job_id: @job.id)
-        @contract.destroy
+        if @contract
+            @contract.destroy
+        end
         @job.destroy
         redirect_to root_path
     end
